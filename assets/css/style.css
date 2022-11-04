@@ -1,0 +1,134 @@
+html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #eee;
+    color: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    
+}
+.container{
+    position: relative;
+}
+.player{
+    position: fixed;
+    text-align: center;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+    z-index: 3;
+    background-color: rgb(20, 12, 12);
+    max-height: 120vmin;
+}
+.player_name{
+    margin: 14px;
+}
+.isRun{
+    color: #c9b5b5;
+    margin-top: 10px;
+    align-items: center;
+}
+.cd{
+    display: flex;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    
+}
+.cd-thumb{
+    width: 100%;
+    border-radius: 50%;
+    background-size:cover ;
+}
+
+.control{
+    font-size: 1.65rem;
+    color: rgb(77, 73, 73);
+}
+.control-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 40px;
+    margin: 26px 30px 20px 30px;
+}
+.control-list li{
+    line-height: 60px;  
+}
+.active{
+    color: red;
+}
+
+.playing{
+    width: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+
+
+.progress{
+    width: 300px;
+    margin: 12px 0 20px;
+}
+.playlist{
+    z-index: 1;
+    background-color: rgb(20, 12, 12);
+    padding-top: calc(120vmin - 12px);
+    padding-bottom: 12px;
+}
+.song{
+    display: flex;
+    margin: 12px 8px 0px 8px;
+    background-color: rgb(41, 11, 11);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.song.active{
+    color: #fff;
+    background-color: #504040e6;
+    
+}
+.song:active{
+    opacity: 0.7;
+}
+.song img{
+    width: 60px;
+    margin: 12px;
+    
+}
+.song.active img{
+    animation: rotate 5s linear infinite;
+    animation-play-state: paused;
+}
+.song-detail{
+    margin: 12px 8px;
+}
+.song-name{
+    margin: 0;
+    padding: 4px ;
+}
+.singer{
+    padding: 4px;
+    opacity: 0.5;
+}
+.song .option{
+    margin: auto 20px auto auto;
+    font-size: 1.4rem;
+    padding: 10px;
+}
