@@ -91,6 +91,42 @@ const app ={
             singer: 'Yến Nhi & Yến Trang',
             path:'./assets/music/GoodByeMyLove-YenTrangYenNhi_645e.mp3' ,
             image: './assets/pics/Yan-Trang.jpg'
+        },
+        {
+            name: 'Come Back to Me',
+            singer: 'Deeper Purpose',
+            path:'./assets/music/Deeper Purpose - Come Back to Me (Extended Mix) on Traxsource.mp3' ,
+            image: './assets/pics/come_back_to_me.jpg'
+        },
+        {
+            name: 'Find a Place',
+            singer: 'Censored X',
+            path:'./assets/music/Find a Place - Single by Censored X on Apple Music.m4a' ,
+            image: './assets/pics/find_a_place.jfif'
+        },
+        {
+            name: 'Game',
+            singer: 'Mowe, Vamero',
+            path:'./assets/music/Game - Mowe, Vamero.mp3' ,
+            image: './assets/pics/game.jpg'
+        },
+        {
+            name: 'Give It To Me',
+            singer: 'Justin Timberlake, Timbaland, Nelly Furtado',
+            path:'./assets/music/Give It To Me - Justin Timberlake, Timbaland, Nelly Furtado.mp3' ,
+            image: './assets/pics/Give_It_to_Me.png'
+        },
+        {
+            name: 'Obsession ',
+            singer: 'Consoul Trainin, Steven Aderinto, DuoViolins',
+            path:'./assets/music/Obsession - Consoul Trainin, Steven Aderinto, DuoViolins.mp3' ,
+            image: './assets/pics/artworks-ACUbNX60DSU4-0-t500x500.jpg'
+        },
+        {
+            name: 'Planet In The Sky',
+            singer: 'Klingande, Merk & Kremont, MKLA',
+            path:'./assets/music/Planet In The Sky - Klingande, Merk & Kremont, MKLA.mp3' ,
+            image: './assets/pics/planet_in_the_sky.jpg'
         }
     ],
     render: function(){
