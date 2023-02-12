@@ -101,7 +101,7 @@ const app ={
         {
             name: 'Find a Place',
             singer: 'Censored X',
-            path:'./assets/music/Find a Place - Single by Censored X on Apple Music.m4a' ,
+            path:'./assets/music/Find A Place - Censored X.mp3' ,
             image: './assets/pics/find_a_place.jfif'
         },
         {
