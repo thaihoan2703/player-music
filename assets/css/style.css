@@ -7,18 +7,18 @@ html{
     margin: 0;
     padding: 0;
 }
-.body{
-    
-}
+
 .container{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    
 }
 .player{
-    position: fixed;
     text-align: center;
     background-color: #fff;
-    position: fixed;
     width: 100%;
+    position: fixed;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
     z-index: 3;
@@ -80,9 +80,10 @@ html{
 }
 .playlist{
     z-index: 1;
+    padding-top: 460px;
     background-color: rgb(20, 12, 12);
-    padding-top: calc(120vmin - 12px);
     padding-bottom: 12px;
+    width: 100%;
 }
 .song{
     display: flex;
