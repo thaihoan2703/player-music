@@ -75,9 +75,26 @@ html{
 
 
 .progress{
-    width: 300px;
     margin: 12px 0 20px;
+    background: #2e07079f;
 }
+.progress{
+	-webkit-appearance:none;
+	width:75%;
+	height:4px;
+	border-radius:5px;
+	background-color:#a79195;
+	outline:none;
+}
+.progress ::-webkit-slider-thumb{
+	-webkit-appearance:none;
+	width:20px;
+	height:20px;
+	border-radius:50%;
+	background-color:#c0919a;
+}
+
+
 .playlist{
     z-index: 1;
     padding-top: 460px;
