@@ -19,42 +19,13 @@ const app ={
     isPlaying: false,
     isShuffle: false,
     isReplay : false,
+    ownPlaylist :[],
     songs :[
-        {
-            name: 'Em là',
-            singer: 'Mono',
-            path: './assets/music/EmLa-MONOOnionn-7736094.mp3',
-            image: './assets/pics/mono.jpg'
-        },
-        {
-            name: 'Waiting for you',
-            singer: 'Mono',
-            path: './assets/music/WaitingForYou-MONOOnionn-7733882.mp3',
-            image: './assets/pics/mono.jpg'
-        },
-        {
-            name: 'Chỉ là lời nói',
-            singer: 'Chung Thanh Duy',
-            path: './assets/music/ChiLaLoiNoi-ChungThanhDuy-7565204.mp3',
-            image: './assets/pics/ChungThanhDuy-ChiLaLoiNoi.jpg'
-        },
-        {
-            name: 'Một chút thôi',
-            singer: 'Bray & Hella',
-            path: './assets/music/MotChutThoi-BRayHelia-8037657.mp3',
-            image: './assets/pics/Bray_MotChutThoi.jpg'
-        },
         {
             name: 'BAD MAN',
             singer: 'Lil Shady ft Chee',
             path: './assets/music/BADMAN-LilShadyCheeNu-7990791.mp3',
             image: './assets/pics/LilShady_badman.jpg'
-        },
-        {
-            name: 'Love U So',
-            singer: 'WEAN & Tùng',
-            path:'./assets/music/LoveUSo-WEANTung-7864509.mp3' ,
-            image: './assets/pics/WEAN.jpg'
         },
         {
             name: 'She Knows',
@@ -69,12 +40,6 @@ const app ={
             image: './assets/pics/wxrdie_kiNguyenMoi.jpg'
         },
         {
-            name: 'Ngủ sớm đi em',
-            singer: 'DucMinh',
-            path:'./assets/music/NguSomDiEm-DucMinh-7583504.mp3' ,
-            image: './assets/pics/DucMinh_NguSomDiEm.jpg'
-        },
-        {
             name: 'LO HI',
             singer: 'Lil Wuyn & SMO',
             path: './assets/music/LoHi-LilWuynSMO-7802475.mp3',
@@ -85,12 +50,6 @@ const app ={
             singer: 'Karik',
             path:'./assets/music/XaHoiRacRoi-Karik_3f4pa.mp3' ,
             image: './assets/pics/karik.png'
-        },
-        {
-            name: 'Good Bye My Love',
-            singer: 'Yến Nhi & Yến Trang',
-            path:'./assets/music/GoodByeMyLove-YenTrangYenNhi_645e.mp3' ,
-            image: './assets/pics/Yan-Trang.jpg'
         },
         {
             name: 'Come Back to Me',
@@ -127,7 +86,56 @@ const app ={
             singer: 'Klingande, Merk & Kremont, MKLA',
             path:'./assets/music/Planet In The Sky - Klingande, Merk & Kremont, MKLA.mp3' ,
             image: './assets/pics/planet_in_the_sky.jpg'
+        },
+        {
+            name: 'Pump',
+            singer: 'Valentino Khan',
+            path:'./assets/music/Pump - Valentino Khan.mp3' ,
+            image: './assets/pics/pump.jpg'
+        },
+        {
+            name: 'Poppin (Extended Mix)',
+            singer: 'Bassjackers & Pep & Rash',
+            path:'./assets/music/Download Bassjackers & Pep & Rash - Poppin (Extended Mix)(2018) №123499728 - download free mp3 - mp3.pm.mp3' ,
+            image: './assets/pics/poppin.png'
+        },
+        {
+            name: 'In The Club ',
+            singer: 'Swanky Tunes',
+            path:'./assets/music/Swanky_Tunes_-_In_The_Club_Extended_Mix_by_DragoN_Sky_(mp3.pm).mp3' ,
+            image: './assets/pics/in_the_club.jpg'
+        },
+        {
+            name: 'Hard',
+            singer: 'Jewelz & Sparks',
+            path:'./assets/music/Hard - Jewelz & Sparks.mp3' ,
+            image: './assets/pics/hard.jpg'
+        },
+        {
+            name: 'Barraca Vs. Blah Blah Blah (WeDamnz Mashup)',
+            singer: 'Garmiani, Armin van Buuren',
+            path:'./assets/music/Barraca Vs. Blah Blah Blah (WeDamnz Mashup) - Garmiani, Armin van Buuren.mp3' ,
+            image: './assets/pics/barraca.jpg'
+        },
+        {
+            name: 'Gimme that bounce',
+            singer: 'Mau P',
+            path:'./assets/music/Mau P - Gimme that bounce » Скачать новую песню 2023 бесплатно.mp3' ,
+            image: './assets/pics/gimmethatbounce.png'
+        },
+        {
+            name: 'Looking 4 U',
+            singer: 'Sonny Fodera',
+            path:'./assets/music/Sonny Fodera - Looking 4 U.mp3' ,
+            image: './assets/pics/looking4U.jpg'
+        },
+        {
+            name: 'Freak 2 The Core',
+            singer: 'Jakeshoredrive & The Williams Fam',
+            path:'./assets/music/Jakeshoredrive & The Williams Fam - Freak 2 The Core.mp3' ,
+            image: './assets/pics/freak2thecore.png'
         }
+        
     ],
     render: function(){
         const htmls = this.songs.map( (song,index) => {
@@ -218,7 +226,8 @@ const app ={
                 _this.nextSong()
             }
             audio.play();
-            _this.render()
+            _this.render();
+            _this.scrollToActiveSong();
         }
         //xu ly previous song
         preBtn.onclick = function(){
@@ -229,6 +238,8 @@ const app ={
             }
             audio.play();
             _this.render()
+            _this.scrollToActiveSong();
+
         }
         // xu ly shuffle song
         shuffleBtn.onclick = function(){
@@ -271,10 +282,18 @@ const app ={
                 }
             }
             if(e.target.closest('.option')){
-                alert('yeu em')
+                alert('coming soon')
             }
         }
 
+    },
+    scrollToActiveSong: function(){
+        setTimeout(() => {
+            $('.song.active').scrollIntoView({
+                behavior : 'smooth',
+                block: "center", inline: "nearest"
+            })
+        },200)
     },
     loadCurrSong: function(){
         playername.textContent =this.currSong.name
@@ -298,9 +317,14 @@ const app ={
     },
     shuffleSong: function(){
         let newIndex;
+        this.ownPlaylist.push(this.currIndex);
+        console.log(this.ownPlaylist);
         do{
-            newIndex = Math.floor(Math.random() * this.songs.length)
-        }while(newIndex === this.currIndex)
+            newIndex = Math.floor(Math.random() * this.songs.length);
+            if(this.ownPlaylist.length === this.songs.length){
+                this.ownPlaylist = [];
+            }
+        }while(this.ownPlaylist.includes(newIndex) == true)
         this.currIndex = newIndex
         this.loadCurrSong();
     },
