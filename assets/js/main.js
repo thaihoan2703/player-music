@@ -296,7 +296,7 @@ const app ={
         playername.textContent =this.currSong.name
         cdThumb.style.backgroundImage = `url('${this.currSong.image}')`
         audio.src = this.currSong.path
-
+        this.scrollToActiveSong();
     },
     nextSong: function(){
         this.currIndex++;
@@ -304,7 +304,7 @@ const app ={
             this.currIndex = 0;
         }
         this.loadCurrSong();
-        this.scrollToActiveSong();
+        
     },
     preSong: function(){
         this.currIndex--;
@@ -312,7 +312,7 @@ const app ={
             this.currIndex = this.songs.length -1 ;
         }
         this.loadCurrSong();
-        this.scrollToActiveSong();
+        
     },
     shuffleSong: function(){
         let newIndex;
@@ -326,7 +326,7 @@ const app ={
         }while(this.ownPlaylist.includes(newIndex) == true)
         this.currIndex = newIndex
         this.loadCurrSong();
-        this.scrollToActiveSong();
+        
     },
     start: function(){
         this.defineProperties();
