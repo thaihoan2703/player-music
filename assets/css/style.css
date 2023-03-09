@@ -7,18 +7,18 @@ html{
     margin: 0;
     padding: 0;
 }
-.body{
-    
-}
+
 .container{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    
 }
 .player{
-    position: fixed;
     text-align: center;
     background-color: #fff;
-    position: fixed;
     width: 100%;
+    position: fixed;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
     z-index: 3;
@@ -75,14 +75,31 @@ html{
 
 
 .progress{
-    width: 300px;
     margin: 12px 0 20px;
+    background: #7458589f;
 }
+.progress{
+	-webkit-appearance:none;
+	width:75%;
+	height:4px;
+	border-radius:5px;
+	background-color:#a79195;
+	outline:none;
+}
+.progress ::-webkit-slider-thumb{
+	-webkit-appearance:none;
+	width:20px;
+	height:20px;
+	border-radius:50%;
+	background-color:#c0919a;
+}
+
 .playlist{
     z-index: 1;
+    padding-top: 460px;
     background-color: rgb(20, 12, 12);
-    padding-top: calc(120vmin - 12px);
     padding-bottom: 12px;
+    width: 100%;
 }
 .song{
     display: flex;

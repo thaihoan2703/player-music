@@ -19,42 +19,13 @@ const app ={
     isPlaying: false,
     isShuffle: false,
     isReplay : false,
+    ownPlaylist :[],
     songs :[
-        {
-            name: 'Em là',
-            singer: 'Mono',
-            path: './assets/music/EmLa-MONOOnionn-7736094.mp3',
-            image: './assets/pics/mono.jpg'
-        },
-        {
-            name: 'Waiting for you',
-            singer: 'Mono',
-            path: './assets/music/WaitingForYou-MONOOnionn-7733882.mp3',
-            image: './assets/pics/mono.jpg'
-        },
-        {
-            name: 'Chỉ là lời nói',
-            singer: 'Chung Thanh Duy',
-            path: './assets/music/ChiLaLoiNoi-ChungThanhDuy-7565204.mp3',
-            image: './assets/pics/ChungThanhDuy-ChiLaLoiNoi.jpg'
-        },
-        {
-            name: 'Một chút thôi',
-            singer: 'Bray & Hella',
-            path: './assets/music/MotChutThoi-BRayHelia-8037657.mp3',
-            image: './assets/pics/Bray_MotChutThoi.jpg'
-        },
         {
             name: 'BAD MAN',
             singer: 'Lil Shady ft Chee',
             path: './assets/music/BADMAN-LilShadyCheeNu-7990791.mp3',
             image: './assets/pics/LilShady_badman.jpg'
-        },
-        {
-            name: 'Love U So',
-            singer: 'WEAN & Tùng',
-            path:'./assets/music/LoveUSo-WEANTung-7864509.mp3' ,
-            image: './assets/pics/WEAN.jpg'
         },
         {
             name: 'She Knows',
@@ -69,12 +40,6 @@ const app ={
             image: './assets/pics/wxrdie_kiNguyenMoi.jpg'
         },
         {
-            name: 'Ngủ sớm đi em',
-            singer: 'DucMinh',
-            path:'./assets/music/NguSomDiEm-DucMinh-7583504.mp3' ,
-            image: './assets/pics/DucMinh_NguSomDiEm.jpg'
-        },
-        {
             name: 'LO HI',
             singer: 'Lil Wuyn & SMO',
             path: './assets/music/LoHi-LilWuynSMO-7802475.mp3',
@@ -87,11 +52,208 @@ const app ={
             image: './assets/pics/karik.png'
         },
         {
-            name: 'Good Bye My Love',
-            singer: 'Yến Nhi & Yến Trang',
-            path:'./assets/music/GoodByeMyLove-YenTrangYenNhi_645e.mp3' ,
-            image: './assets/pics/Yan-Trang.jpg'
-        }
+            name: 'Come Back to Me',
+            singer: 'Deeper Purpose',
+            path:'./assets/music/Deeper Purpose - Come Back to Me (Extended Mix) on Traxsource.mp3' ,
+            image: './assets/pics/come_back_to_me.jpg'
+        },
+        {
+            name: 'Find a Place',
+            singer: 'Censored X',
+            path:'./assets/music/Find A Place - Censored X.mp3' ,
+            image: './assets/pics/find_a_place.jfif'
+        },
+        {
+            name: 'Game',
+            singer: 'Mowe, Vamero',
+            path:'./assets/music/Game - Mowe, Vamero.mp3' ,
+            image: './assets/pics/game.jpg'
+        },
+        {
+            name: 'Give It To Me',
+            singer: 'Justin Timberlake, Timbaland, Nelly Furtado',
+            path:'./assets/music/Give It To Me - Justin Timberlake, Timbaland, Nelly Furtado.mp3' ,
+            image: './assets/pics/Give_It_to_Me.png'
+        },
+        {
+            name: 'Obsession ',
+            singer: 'Consoul Trainin, Steven Aderinto, DuoViolins',
+            path:'./assets/music/Obsession - Consoul Trainin, Steven Aderinto, DuoViolins.mp3' ,
+            image: './assets/pics/artworks-ACUbNX60DSU4-0-t500x500.jpg'
+        },
+        {
+            name: 'Planet In The Sky',
+            singer: 'Klingande, Merk & Kremont, MKLA',
+            path:'./assets/music/Planet In The Sky - Klingande, Merk & Kremont, MKLA.mp3' ,
+            image: './assets/pics/planet_in_the_sky.jpg'
+        },
+        {
+            name: 'Pump',
+            singer: 'Valentino Khan',
+            path:'./assets/music/Pump - Valentino Khan.mp3' ,
+            image: './assets/pics/pump.jpg'
+        },
+        {
+            name: 'Poppin (Extended Mix)',
+            singer: 'Bassjackers & Pep & Rash',
+            path:'./assets/music/Download Bassjackers & Pep & Rash - Poppin (Extended Mix)(2018) №123499728 - download free mp3 - mp3.pm.mp3' ,
+            image: './assets/pics/poppin.png'
+        },
+        {
+            name: 'In The Club ',
+            singer: 'Swanky Tunes',
+            path:'./assets/music/Swanky_Tunes_-_In_The_Club_Extended_Mix_by_DragoN_Sky_(mp3.pm).mp3' ,
+            image: './assets/pics/in_the_club.jpg'
+        },
+        {
+            name: 'Hard',
+            singer: 'Jewelz & Sparks',
+            path:'./assets/music/Hard - Jewelz & Sparks.mp3' ,
+            image: './assets/pics/hard.jpg'
+        },
+        {
+            name: 'Barraca Vs. Blah Blah Blah (WeDamnz Mashup)',
+            singer: 'Garmiani, Armin van Buuren',
+            path:'./assets/music/Barraca Vs. Blah Blah Blah (WeDamnz Mashup) - Garmiani, Armin van Buuren.mp3' ,
+            image: './assets/pics/barraca.jpg'
+        },
+        {
+            name: 'Gimme that bounce',
+            singer: 'Mau P',
+            path:'./assets/music/Mau P - Gimme that bounce » Скачать новую песню 2023 бесплатно.mp3' ,
+            image: './assets/pics/gimmethatbounce.png'
+        },
+        {
+            name: 'Looking 4 U',
+            singer: 'Sonny Fodera',
+            path:'./assets/music/Sonny Fodera - Looking 4 U.mp3' ,
+            image: './assets/pics/looking4U.jpg'
+        },
+        {
+            name: 'Freak 2 The Core',
+            singer: 'Jakeshoredrive & The Williams Fam',
+            path:'./assets/music/Jakeshoredrive & The Williams Fam - Freak 2 The Core.mp3' ,
+            image: './assets/pics/freak2thecore.png'
+        },
+
+
+
+
+
+
+
+
+
+
+        {
+            name: 'Standard',
+            singer: 'Linius Ft. Kordas - (KEAN DYSSO Remix)',
+            path: './assets/music/Linius Ft. Kordas - Standard (KEAN DYSSO Remix) [OUT NOW] by KEAN DYSSO.mp3',
+            image: './assets/pics/standard_kean-dysso.jpg'
+        },
+        {
+            name: 'Astronaut In The Ocean',
+            singer: '[Ibrahim & Ømer ReMiX] by CiufleA Kode',
+            path: './assets/music/Masked Wolf - Astronaut In The Ocean [Ibrahim & Ømer ReMiX] by ♛ CiufleA Kode ♛.mp3',
+            image: './assets/pics/astronautInTheOcean_ibrahim.jpg'
+        },
+        {
+            name: 'Batshit',
+            singer: 'SOFI TUKKER - (Ilkay Sencan Remix)',
+            path: './assets/music/SOFI TUKKER - Batshit (Ilkay Sencan Remix) [Ultra Music] by Ilkay Sencan.mp3',
+            image: './assets/pics/batshit.jpg'
+        },
+        {
+            name: 'RAVE',
+            singer: 'Dxrk ダーク',
+            path: './assets/music/RAVE by Dxrk ダーク.mp3',
+            image: './assets/pics/rave_dxrk.jpg'
+        },
+        {
+            name: 'ROSES',
+            singer: 'MVDNES by 𝗛𝗮𝘀𝘀𝗶',
+            path: './assets/music/ROSES-MVDNES by 𝗛𝗮𝘀𝘀𝗶💸.mp3',
+            image: './assets/pics/roses_mvdnes.jpg'
+        },
+        {
+            name: 'White Kicks',
+            singer: 'Linius Ft. Kordas (KEAN DYSSO Remix)',
+            path: './assets/music/Linius Ft. Kordas - White Kicks (KEAN DYSSO Remix) by KEAN DYSSO.mp3',
+            image: './assets/pics/whiteKicks_linius.jpg'
+        },
+        {
+            name: 'Problems',
+            singer: 'KVPV',
+            path: './assets/music/KVPV - Problems by Big Mamas House Records.mp3',
+            image: './assets/pics/problems_kvpv.png'
+        },
+        {
+            name: 'The Boy Next Door',
+            singer: 'Camouflage (feat. Sjaak & Stepherd & Jozo & Lenji) ',
+            path: './assets/music/The Boy Next Door - Camouflage (feat. Sjaak & Stepherd & Jozo & Lenji) [OUT NOW] by Spinning Records.mp3',
+            image: './assets/pics/theBoyNextDoor_camouflage.jpg'
+        },
+        {
+            name: 'Turn On The Lights again (Remix)',
+            singer: 'Fred again.. X Swedish House Mafia (feat. Future)',
+            path: './assets/music/Fred again.. X Swedish House Mafia (feat. Future) - Turn On The Lights again.. (Maddix Techno Remix) by Maddix.mp3',
+            image: './assets/pics/turnOnTheLightsAgain_fred-again.jpg'
+        },
+        {
+            name: 'Therefore i am',
+            singer: 'ed3nvids',
+            path: './assets/music/therefore i am by ed3nvids.mp3',
+            image: './assets/pics/thereforeIam_ed3nvids.jpg'
+        },
+        {
+            name: 'PSY Or DIE',
+            singer: 'Ishimaru',
+            path: './assets/music/Ishimaru - PSY Or DIE by ISHIMARU.mp3',
+            image: './assets/pics/psyordie_ishimaru.jpg'
+        },
+        {
+            name: 'Sharks (Remix)',
+            singer: 'Imagine Dragons (Remix) by Juke Box',
+            path: './assets/music/Sharks - Imagine Dragons (Remix) by Juke Box.mp3',
+            image: './assets/pics/sharks_imaginedragon.png'
+        },
+        {
+            name: 'Good Days ( Remix)',
+            singer: 'LIQUID (KREAM Remix)',
+            path: './assets/music/SZA - Good Days (KREAM Remix) by LIQUID - LAB.mp3',
+            image: './assets/pics/goodday_kream.jpg'
+        },
+        {
+            name: 'Saving Grace',
+            singer: 'As I Am',
+            path: './assets/music/As I Am - Saving Grace (Defected Records) by AS I AM.mp3',
+            image: './assets/pics/savingGrace_asIam.jpg'
+        },
+        {
+            name: 'Anything Tonight',
+            singer: 'Dance Cult',
+            path: './assets/music/Dance Cult - Anything Tonight [Thissongissick.com Premiere] [Limited Free Download] by Thissongissick.com.mp3',
+            image: './assets/pics/anythingtonight_danceCult.jpg'
+        },
+        {
+            name: 'Hideaway (Remix)',
+            singer: 'Kiesza (Joey Azure remix)',
+            path: './assets/music/Kiesza - Hideaway (Joey Azure Remix) by Joey Azure.mp3',
+            image: './assets/pics/hideaway_kiesza.jpg'
+        },
+        // {
+        //     name: '',
+        //     singer: '',
+        //     path: './assets/music/',
+        //     image: './assets/pics/'
+        // },
+        // {
+        //     name: '',
+        //     singer: '',
+        //     path: './assets/music/',
+        //     image: './assets/pics/'
+        // }
+        
     ],
     render: function(){
         const htmls = this.songs.map( (song,index) => {
@@ -182,7 +344,7 @@ const app ={
                 _this.nextSong()
             }
             audio.play();
-            _this.render()
+            _this.render();
         }
         //xu ly previous song
         preBtn.onclick = function(){
@@ -193,6 +355,7 @@ const app ={
             }
             audio.play();
             _this.render()
+
         }
         // xu ly shuffle song
         shuffleBtn.onclick = function(){
@@ -235,16 +398,24 @@ const app ={
                 }
             }
             if(e.target.closest('.option')){
-                alert('yeu em')
+                alert('coming soon')
             }
         }
 
+    },
+    scrollToActiveSong: function(){
+        setTimeout(() => {
+            $('.song.active').scrollIntoView({
+                behavior : 'smooth',
+                block: "center", inline: "nearest"
+            })
+        },200)
     },
     loadCurrSong: function(){
         playername.textContent =this.currSong.name
         cdThumb.style.backgroundImage = `url('${this.currSong.image}')`
         audio.src = this.currSong.path
-
+        this.scrollToActiveSong();
     },
     nextSong: function(){
         this.currIndex++;
@@ -262,9 +433,14 @@ const app ={
     },
     shuffleSong: function(){
         let newIndex;
+        this.ownPlaylist.push(this.currIndex);
+        console.log(this.ownPlaylist);
         do{
-            newIndex = Math.floor(Math.random() * this.songs.length)
-        }while(newIndex === this.currIndex)
+            newIndex = Math.floor(Math.random() * this.songs.length);
+            if(this.ownPlaylist.length === this.songs.length){
+                this.ownPlaylist = [];
+            }
+        }while(this.ownPlaylist.includes(newIndex) == true)
         this.currIndex = newIndex
         this.loadCurrSong();
     },
