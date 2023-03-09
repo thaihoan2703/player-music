@@ -135,16 +135,6 @@ const app ={
             path:'./assets/music/Jakeshoredrive & The Williams Fam - Freak 2 The Core.mp3' ,
             image: './assets/pics/freak2thecore.png'
         },
-
-
-
-
-
-
-
-
-
-
         {
             name: 'Standard',
             singer: 'Linius Ft. Kordas - (KEAN DYSSO Remix)',
@@ -171,7 +161,7 @@ const app ={
         },
         {
             name: 'ROSES',
-            singer: 'MVDNES by 𝗛𝗮𝘀𝘀𝗶',
+            singer: 'MVDNES by Hassi',
             path: './assets/music/ROSES-MVDNES by 𝗛𝗮𝘀𝘀𝗶💸.mp3',
             image: './assets/pics/roses_mvdnes.jpg'
         },
